@@ -6,10 +6,15 @@ from rest_framework.routers import DefaultRouter
 from notes import views as notes_views
 
 router = DefaultRouter()
-router.register(r'notes', notes_views.NoteViewSet)
+router.register(r'notes', notes_views.NoteViewSet, 'note')
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include(router.urls)),
+]
+
+
+urlpatterns += [
+    url(r'^api-auth/', include('rest_framework.urls')),
 ]
