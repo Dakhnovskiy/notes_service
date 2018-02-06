@@ -18,26 +18,43 @@ Rest сервис для управления заметками
 **Получение списка заметок**
 
 GET: /api/notes/
+    
+    Пример ответа        
+    [{"id":2,"title":"test_tile","text":"test_text","outer_user_id":3}]
 
 
 **Получение списка заметок по идентфикатору пользователя внешней системы**
 
 GET /api/notes/?outer_user_id={outer_user_id}
+    
+    Пример ответа        
+    [{"id":2,"title":"test_tile","text":"test_text","outer_user_id":3}]
 
 
 **Получение одной заметки по идентификатору**
 
 GET: /api/notes/{id}
 
+    Пример ответа        
+    {"id":2,"title":"test_tile","text":"test_text","outer_user_id":3}
+
 
 **Создание заметки**
 
 POST: /api/notes
 
+    Пример параметров запроса
+    Media type: application/json
+    Body: {"title":"test_tile","text":"test_text","outer_user_id":3}
+
 
 **Редактирование заметки с идентификатором id**
 
 PUT: /api/notes/{id}
+
+    Пример параметров запроса
+    Media type: application/json
+    Body: {"title":"test_tile_change","text":"test_text_change","outer_user_id":3}
 
 
 **Удаление заметки с идентификатором id**
