@@ -2,12 +2,13 @@ from rest_framework import viewsets, permissions
 
 from . import models
 from . import serializers
+from .permissions import IsOwner
 
 
 class NoteViewSet(viewsets.ModelViewSet):
 
     serializer_class = serializers.NoteSerializer
-    permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (permissions.IsAuthenticated, IsOwner,)
 
     def get_queryset(self):
         outer_user_id = self.request.query_params.get('outer_user_id')
