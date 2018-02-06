@@ -1,7 +1,7 @@
 import os
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "notes_api.settings")
-os.environ.setdefault('DJANGO_CONFIGURATION', 'DevelopmentConfig')
+os.environ.setdefault("DJANGO_CONFIGURATION", "DevelopmentConfig")
 
 from configurations.wsgi import get_wsgi_application
 
