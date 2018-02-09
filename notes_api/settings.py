@@ -1,4 +1,5 @@
 import os
+import dj_database_url
 from configurations import Configuration
 
 
@@ -90,3 +91,11 @@ class DevelopmentConfig(Config):
 
 class ProductionConfig(Config):
     DEBUG = False
+
+    @property
+    def DATABASES(self):
+        db_from_env = dj_database_url.config(conn_max_age=500)
+
+        return {
+            'default': db_from_env
+        }
