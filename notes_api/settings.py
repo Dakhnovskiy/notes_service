@@ -82,7 +82,14 @@ class Config(Configuration):
 
     USE_TZ = True
 
+    @property
+    def STATIC_ROOT(self):
+        return os.path.join(self.BASE_DIR, 'staticfiles')
     STATIC_URL = '/static/'
+
+    # STATICFILES_DIRS = (
+    #     os.path.join(BASE_DIR, 'static'),
+    # )
 
 
 class DevelopmentConfig(Config):
