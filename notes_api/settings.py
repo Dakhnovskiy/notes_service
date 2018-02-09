@@ -87,10 +87,6 @@ class Config(Configuration):
         return os.path.join(self.BASE_DIR, 'staticfiles')
     STATIC_URL = '/static/'
 
-    # STATICFILES_DIRS = (
-    #     os.path.join(BASE_DIR, 'static'),
-    # )
-
 
 class DevelopmentConfig(Config):
     DEBUG = True
