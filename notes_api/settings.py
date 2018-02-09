@@ -85,7 +85,10 @@ class Config(Configuration):
     @property
     def STATIC_ROOT(self):
         return os.path.join(self.BASE_DIR, 'staticfiles')
+
     STATIC_URL = '/static/'
+
+    STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 
 class DevelopmentConfig(Config):
