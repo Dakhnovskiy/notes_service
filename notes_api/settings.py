@@ -11,7 +11,7 @@ class Config(Configuration):
 
     DEBUG = True
 
-    ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '').split(',')
+    ALLOWED_HOSTS = []
 
     INSTALLED_APPS = [
         'django.contrib.admin',
@@ -97,6 +97,8 @@ class DevelopmentConfig(Config):
 
 class ProductionConfig(Config):
     DEBUG = False
+
+    ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '').split(',')
 
     @property
     def DATABASES(self):
